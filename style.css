@@ -1,0 +1,521 @@
+/* ========================== */
+/* GERAIS */
+/* ========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* CORES principais: vermelho = var(--red), branco = var(--white), preto = var(--dark) */
+:root {
+    --red: #ff2b2b;
+    --white: #ffffff;
+    --dark: #0c0c0c;
+    --muted: #f5f6f8;
+    --whatsapp: #25d366;
+}
+
+/* ========================== */
+/* HEADER */
+/* ========================== */
+.header {
+    background: var(--dark);
+    color: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0;
+}
+
+/* LOGO: suportamos ambos .logo-hugo/.logo-tech e .logo-white/.logo-red */
+.logo {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-hugo,
+.logo-white {
+    color: var(--white);
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.logo-tech,
+.logo-red {
+    color: var(--red);
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-top: -4px;
+}
+
+/* NAV */
+.nav {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    transition: right .25s ease, background .25s ease;
+}
+
+.nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 6px 8px;
+    transition: color .15s, background .15s;
+    border-radius: 6px;
+}
+
+.nav a:hover {
+    color: var(--red);
+}
+
+.nav .active {
+    color: var(--red);
+    font-weight: 700;
+}
+
+/* botão de ação (ex.: WhatsApp no nav) */
+.btn-nav {
+    padding: 8px 16px;
+    background: var(--red);
+    border-radius: 6px;
+    color: var(--white) !important;
+    font-weight: 700;
+}
+
+/* MENU MOBILE BUTTON - suportamos label.menu-icon e #menu-btn se existir */
+#menu-toggle { display: none; } /* input checkbox */
+.menu-icon,
+#menu-btn {
+    display: none;
+    background: transparent;
+    border: 0;
+    color: var(--white);
+    font-size: 26px;
+    cursor: pointer;
+}
+
+/* ========================== */
+/* HERO (mantida a imagem) */
+/* ========================== */
+.parallax {
+    background: url('https://images.unsplash.com/photo-1518770660439-4636190af475') center/cover fixed;
+    background-size: cover;
+}
+
+.hero {
+    position: relative;
+    color: var(--white);
+    text-align: center;
+    padding: 120px 20px;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-inner {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: 42px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.hero-sub {
+    font-size: 16px;
+    margin-bottom: 18px;
+    opacity: 0.95;
+}
+
+/* BOTÃO PRINCIPAL */
+.btn {
+    display: inline-block;
+    background: var(--red);
+    color: var(--white);
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform .18s, opacity .18s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    opacity: .95;
+}
+
+/* ========================== */
+/* SOBRE (corrigido/responsivo) */
+/* ========================== */
+.sobre {
+    padding: 60px 0;
+    background: var(--muted);
+}
+
+.sobre-area {
+    display: flex;
+    gap: 36px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sobre-texto {
+    flex: 1;
+}
+
+.sobre-texto h2 {
+    font-size: 28px;
+    margin-bottom: 12px;
+    color: var(--dark);
+}
+
+.sobre-texto p {
+    margin-bottom: 10px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.sobre-lista {
+    margin-top: 12px;
+    list-style: none;
+    color: #333;
+}
+
+.sobre-lista li {
+    margin-bottom: 8px;
+}
+
+/* imagem lateral */
+.sobre-img {
+    flex: 1;
+    height: 260px;
+    border-radius: 12px;
+    background-image: url('img/logo.png');
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .15);
+}
+
+/* layout responsivo para sobre */
+@media (max-width:900px) {
+    .sobre-area {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sobre-img {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+/* ========================== */
+/* DESTAQUES / CARDS */
+/* ========================== */
+.destaques {
+    padding: 60px 0;
+    background: var(--white);
+}
+
+.center {
+    text-align: center;
+    margin-bottom: 32px;
+    font-size: 26px;
+    color: var(--dark);
+    font-weight: 700;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    padding: 22px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .06);
+    transition: transform .2s, border-left .2s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-left: 4px solid var(--red);
+}
+
+.icon {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+/* ========================== */
+/* RODAPÉ */
+/* ========================== */
+.footer {
+    background: var(--dark);
+    color: var(--white);
+    padding: 18px 0;
+    text-align: center;
+}
+
+/* ========================== */
+/* WHATSAPP FLUTUANTE */
+/* ========================== */
+#whatsapp-btn {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .18);
+    background: var(--red);
+    z-index: 200;
+    text-decoration: none;
+    transition: transform .15s, box-shadow .15s;
+}
+
+#whatsapp-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 26px rgba(0, 0, 0, .26);
+}
+
+/* acessibilidade: foco */
+#whatsapp-btn:focus {
+    outline: 3px solid rgba(255, 43, 43, .2);
+    outline-offset: 4px;
+}
+
+/* ========================== */
+/* animação de scroll reveal (básica) */
+/* ========================== */
+.scroll-anim {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: all .6s cubic-bezier(.2, .9, .3, 1);
+}
+
+.scroll-anim.show {
+    opacity: 1;
+    transform: none;
+}
+
+/* ========================== */
+/* MOBILE: esconder nav e mostrar botão hamburger */
+/* ========================== */
+@media (max-width:880px) {
+    /* nav passa a ser painel off-canvas */
+    .nav {
+        position: fixed;
+        right: -260px;
+        top: 0;
+        height: 100%;
+        width: 260px;
+        background: var(--dark);
+        flex-direction: column;
+        padding: 60px 18px;
+        gap: 18px;
+        transition: right .25s;
+        z-index: 150;
+    }
+
+    .menu-icon,
+    #menu-btn {
+        display: block;
+    }
+
+    .nav a {
+        color: var(--white);
+        font-size: 18px;
+    }
+
+    /* quando o checkbox #menu-toggle estiver marcado, mostra nav (funciona se o input estiver antes do .nav) */
+    #menu-toggle:checked ~ .nav {
+        right: 0;
+    }
+}
+
+/* ==== Desktop reset: garante nav visível e sem posicionamento fixed ===== */
+@media (min-width: 881px) {
+    .nav {
+        position: static;
+        right: auto;
+        top: auto;
+        height: auto;
+        width: auto;
+        background: transparent;
+        padding: 0;
+        flex-direction: row;
+    }
+    .menu-icon,
+    #menu-btn {
+        display: none;
+    }
+}
+
+/* ============================== */
+/* LOJA DE SERVIÇOS */
+/* ============================== */
+
+/* título */
+.titulo-loja {
+    text-align: center;
+    font-size: 34px;
+    font-weight: 700;
+    margin: 40px 0;
+    color: var(--red);
+}
+
+/* grid */
+.grid-servicos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* card */
+.servico-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    transition: transform .25s ease, box-shadow .25s ease;
+    overflow: hidden; /* evita vazamento visual quando img é transformada */
+}
+
+/* hover */
+.servico-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 26px rgba(0,0,0,0.14);
+}
+
+/* container da imagem: suporta duas abordagens:
+   - background (se você usa inline style background-image)
+   - <img> (recomendado)  */
+.servico-img {
+    width: 100%;
+    height: 240px;  /* aumentado para mais qualidade */
+    border-radius: 14px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 18px;
+    background-color: #111;
+}
+
+/* Se estiver usando <img>, melhora a nitidez */
+.servico-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    image-rendering: auto;
+    border-radius: 14px;
+}
+
+
+/* alternativa: se você quer forçar nitidez em dispositivos com pixel ratio alto,
+   mantenha imagens 2x e use srcset no HTML (a seguir eu mostro o HTML). */
+
+/* texto do card */
+.servico-item h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #222;
+}
+
+.preco-servico {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--red);
+    margin-bottom: 15px;
+}
+
+/* botão comprar */
+.btn-comprar {
+    background: var(--whatsapp);
+    padding: 12px 18px;
+    display: block;
+    text-align: center;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform .15s, background .15s;
+}
+
+.btn-comprar:hover {
+    transform: translateY(-3px);
+    background: #1ebe5d;
+}
+
+/* responsivo - manter proporções em telas menores */
+@media (max-width:480px) {
+    .servico-img,
+    .servico-img img {
+        height: 140px;
+    }
+    .preco-servico { font-size: 20px; }
+}
+
+/* helper: evita que imagem inline background fique com blur ao usar transform */
+.servico-item::selection { background: transparent; }
+
+/* pequenas helpers */
+
+/* Botão com ícone de telefone que abre WhatsApp */
+.btn-phone {
+    padding: 8px 16px;
+    background: var(--red);
+    border-radius: 6px;
+    color: var(--white) !important;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background .2s ease, transform .2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-phone:hover {
+    background: #e02222;
+    transform: translateY(-2px);
+}

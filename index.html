@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>HUGO TECH - Assistência Técnica</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="header">
+    <div class="container header-content">
+        <!-- LOGO -->
+        <a href="index.html" class="logo">
+            <span class="logo-hugo">HUGO</span>
+            <span class="logo-tech">TECH</span>
+        </a>
+
+        <!-- MENU MOBILE -->
+        <button id="menu-btn" class="menu-icon" aria-label="Abrir menu">☰</button>
+
+        <nav class="nav" id="nav" aria-label="menu principal">
+            <a href="index.html">Início</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="#diferenciais">Diferenciais</a>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO (mantive a mesma imagem de fundo) -->
+<section class="hero parallax scroll-anim">
+    <div class="container hero-inner">
+        <h1 class="hero-title">Assistência Técnica Especializada</h1>
+        <p class="hero-sub">Reparos, manutenção, diagnósticos avançados e suporte completo para computadores e notebooks.</p>
+        <a href="servicos.html" class="btn">Ver Serviços</a>
+    </div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre scroll-anim" id="sobre">
+    <div class="container sobre-area">
+        <div class="sobre-texto">
+            <h2>Quem Somos</h2>
+            <p>Somos a <strong>HUGO TECH</strong>, referência em assistência técnica para computadores, notebooks e redes.</p>
+            <p>Atendemos residências e empresas com transparência, preço justo e garantia nos serviços realizados.</p>
+
+            <ul class="sobre-lista">
+                <li>✔ Diagnóstico profissional e relatórios</li>
+                <li>✔ Suporte remoto e atendimento presencial</li>
+                <li>✔ Planos de manutenção para empresas</li>
+                <li>✔ Garantia e peças de qualidade</li>
+            </ul>
+        </div>
+
+        <div class="sobre-img" aria-hidden="true"></div>
+    </div>
+</section>
+
+<!-- DESTAQUES -->
+<section class="destaques scroll-anim" id="diferenciais">
+    <div class="container">
+        <h2 class="center">Por que escolher a HUGO TECH?</h2>
+
+        <div class="cards">
+            <article class="card">
+                <div class="icon" aria-hidden="true">⚡</div>
+                <h3>Atendimento Rápido</h3>
+                <p>Diagnóstico imediato e suporte ágil.</p>
+            </article>
+
+            <article class="card">
+                <div class="icon" aria-hidden="true">💻</div>
+                <h3>Técnicos Certificados</h3>
+                <p>Profissionais experientes em hardware e software.</p>
+            </article>
+
+            <article class="card">
+                <div class="icon" aria-hidden="true">🔒</div>
+                <h3>Segurança de Dados</h3>
+                <p>Procedimentos seguros e backup quando necessário.</p>
+            </article>
+
+            <article class="card">
+                <div class="icon" aria-hidden="true">🛠️</div>
+                <h3>Peças Originais</h3>
+                <p>Somente componentes homologados e de qualidade.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- RODAPÉ -->
+<footer class="footer">
+    <div class="container">
+        <p>© 2025 HUGO TECH - Assistência Técnica de Informática</p>
+    </div>
+</footer>
+
+<!-- BOTÃO FLUTUANTE WHATSAPP -->
+<a id="whatsapp-btn"
+   href="https://wa.me/5517996746845?text=Olá!%20Quero%20informações%20sobre%20seus%20serviços."
+   target="_blank" rel="noopener noreferrer" aria-label="Abrir conversa no WhatsApp">
+    <!-- SVG ícone WhatsApp -->
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20.52 3.48C18.27 1.23 15.02 0 11.5 0 5.34 0 .2 5.14.2 11.5c0 2.02.53 3.97 1.54 5.7L0 24l6.97-1.8c1.6.87 3.42 1.32 5.53 1.32 6.16 0 11.3-5.14 11.3-11.5 0-3.52-1.23-6.77-3.78-9.22z" fill="#fff" opacity="0.03"/>
+        <path d="M12 2.1c3.8 0 6.9 3.08 6.9 6.9 0 3.8-3.1 6.9-6.9 6.9-1.2 0-2.3-.3-3.3-.9l-3.1.8.8-3.1c-.6-1-.9-2.1-.9-3.3C5.1 5.18 8.2 2.1 12 2.1z" fill="#ff2b2b"/>
+        <path d="M17.1 14.1c-.2-.1-1.1-.6-1.3-.7-.2-.1-.4-.1-.6.1-.2.2-.8.7-1 1-.2.4-.4.4-.8.2-1-.5-1.7-1.3-2.4-2.4-.2-.4 0-.7.2-.9.2-.2.4-.5.6-.8.2-.3 0-.6-.1-.8-.1-.2-1.3-3-1.9-4.1-.5-1.1-1.1-1-1.5-1-.4 0-.8 0-1.2 0s-1 .3-1.5.8C5.5 5.6 5 6.8 5 8.3c0 1.5.5 3.4 2 5.3 1.5 1.9 3.5 3.4 6.3 4.4 2 .7 3.6.6 4.9.5 1.3-.1 2.2-1 2.6-1.9.4-.9.4-1.9.3-2.1-.1-.2-.5-.3-.8-.4z" fill="#fff"/>
+    </svg>
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>
